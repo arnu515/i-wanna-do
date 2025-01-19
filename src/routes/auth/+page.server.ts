@@ -4,6 +4,7 @@ import * as v from 'valibot'
 import sql, { type User } from '$lib/db'
 import { ulid } from 'ulid'
 import * as session from '$lib/util/session.server'
+import argon2 from 'argon2'
 
 export const actions: Actions = {
 	default: async ({ request, cookies, locals }) => {
@@ -48,7 +49,7 @@ export const actions: Actions = {
 			try {
 				const userId = ulid()
 				const username = res.output.split('@')[0]
-				const pwHash = await Bun.password.hash(pwRes.output)
+				const pwHash = await argon2.hash(pwRes.output)
 				const [user] = await sql<
 					User[]
 				>`INSERT INTO users ${sql({ id: userId, email: res.output, password: pwHash, provider: 'password', provider_id: null, username })} RETURNING *`
@@ -70,7 +71,7 @@ export const actions: Actions = {
 						errors: `You cannot login with a password. You must login using ${user.provider}`,
 						email
 					})
-				if (!(await Bun.password.verify(pwRes.output, user.password!)))
+				if (!(await argon2.verify(pwRes.output, user.password!)))
 					return fail(400, { errors: 'Invalid password', email, signUp })
 				const sid = await session.save(user.id)
 				cookies.set(session.COOKIE_NAME, sid, session.COOKIE_OPTS)
