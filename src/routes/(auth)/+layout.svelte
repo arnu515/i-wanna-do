@@ -28,9 +28,7 @@
 	</a>
 </header>
 
-<main
-	class="mb-16 mt-16 h-screen max-w-screen-lg overflow-y-auto px-2 md:px-6 md:pb-4 md:pt-4 lg:mx-auto lg:px-4"
->
+<main class="mb-16 mt-16 max-w-screen-lg px-2 md:px-6 md:pb-4 md:pt-4 lg:mx-auto lg:px-4">
 	{@render children()}
 </main>
 

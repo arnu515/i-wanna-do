@@ -21,6 +21,7 @@
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/bun": "^1.1.17",
+		"@types/marked": "^6.0.0",
 		"autoprefixer": "^10.4.20",
 		"bits-ui": "^1.0.0-next.78",
 		"clsx": "^2.1.1",
@@ -43,6 +44,7 @@
 	},
 	"dependencies": {
 		"lucide-svelte": "^0.473.0",
+		"marked": "^15.0.6",
 		"postgres": "^3.4.5",
 		"ulid": "^2.3.0",
 		"valibot": "^1.0.0-beta.12"
