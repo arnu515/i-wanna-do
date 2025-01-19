@@ -15,7 +15,6 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
-		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@tailwindcss/forms": "^0.5.10",
@@ -43,6 +42,7 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-node": "^5.2.12",
 		"argon2": "^0.41.1",
 		"lucide-svelte": "^0.473.0",
 		"marked": "^15.0.6",
