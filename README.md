@@ -6,4 +6,4 @@ This application was built for the [GitHub Copilot 1-Day Build Challenge](https:
 
 It is hosted live at <https://do.aarnavpai.in>.
 
-For more information, check [this post on DEV](TBD)
+For more information, check [this post on DEV](https://dev.to/arnu515/i-wanna-do-an-ai-powered-habit-building-application-3kpi)
